@@ -22,106 +22,75 @@
         app:layout_anchor="@+id/include2"
         app:layout_anchorGravity="center">
 
-        <Button
-            android:id="@+id/date_picker_button"
-            android:layout_width="154dp"
-            android:layout_height="52dp"
-            android:layout_marginBottom="356dp"
-            android:insetLeft="0dp"
-            android:onClick="showDatePicker"
-            android:text="@string/enregistrer_la_date"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.953"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:ignore="TextSizeCheck" />
-
         <EditText
             android:id="@+id/start_time_input"
             android:layout_width="222dp"
             android:layout_height="48dp"
+            android:layout_marginStart="92dp"
+            android:autofillHints=""
             android:focusable="false"
             android:hint="@string/heure_d_but_hh_mm"
             android:inputType="none"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/start_time_picker_button"
-            app:layout_constraintHorizontal_bias="0.4"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.599"
-            android:autofillHints="" />
-
-        <Button
-            android:id="@+id/start_time_picker_button"
-            android:layout_width="150dp"
-            android:layout_height="48dp"
-            android:layout_marginEnd="16dp"
-            android:onClick="showStartTimePicker"
-            android:text="@string/enregistrer_heure_d_but"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/date_picker_button"
-            app:layout_constraintVertical_bias="0.133"
-            tools:ignore="TextSizeCheck" />
+            app:layout_constraintVertical_bias="0.594" />
 
         <EditText
             android:id="@+id/end_time_input"
             android:layout_width="221dp"
             android:layout_height="48dp"
+            android:autofillHints=""
             android:focusable="false"
             android:hint="@string/heure_fin_hh_mm"
             android:inputType="none"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.073"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/start_time_input"
-            app:layout_constraintVertical_bias="0.102"
-            android:autofillHints="" />
-
-        <Button
-            android:id="@+id/end_time_picker_button"
-            android:layout_width="152dp"
-            android:layout_height="48dp"
-            android:onClick="showEndTimePicker"
-            android:text="@string/enregistrer_heure_de_fin"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.454"
-            app:layout_constraintStart_toEndOf="@+id/end_time_input"
-            app:layout_constraintTop_toBottomOf="@+id/start_time_picker_button"
-            app:layout_constraintVertical_bias="0.098"
-            tools:ignore="TextSizeCheck" />
+            app:layout_constraintVertical_bias="0.137" />
 
         <EditText
             android:id="@+id/date_input"
             android:layout_width="224dp"
             android:layout_height="48dp"
+            android:layout_marginStart="92dp"
+            android:autofillHints=""
             android:focusable="false"
             android:hint="@string/date_jj_mm_aaaa"
             android:inputType="none"
             app:layout_constraintBottom_toTopOf="@+id/start_time_input"
-            app:layout_constraintEnd_toStartOf="@+id/date_picker_button"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.886"
-            tools:ignore="TextFields"
-            android:autofillHints="" />
+            app:layout_constraintVertical_bias="0.921"
+            tools:ignore="TextFields" />
+
 
         <EditText
             android:id="@+id/IDequipe_input"
             android:layout_width="220dp"
             android:layout_height="52dp"
+            android:autofillHints=""
             android:hint="@string/id_quipe_a_b_c"
             android:inputType="text"
             android:maxLines="1"
             app:layout_constraintBottom_toTopOf="@+id/date_input"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.047"
+            app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.97"
-            android:autofillHints="" />
+            app:layout_constraintVertical_bias="0.92" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Enregistrer"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/end_time_input" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -3,6 +3,8 @@ package com.example.mamissions7;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
@@ -12,9 +14,15 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.example.mamissions7.databinding.ActivityMainBinding;
 
+import org.xmlpull.v1.XmlPullParser;
+
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration appBarConfiguration;
+    private XmlPullParser IDequipe_input;
+    private XmlPullParser date_input;
+    private XmlPullParser start_time_input;
+    private XmlPullParser end_time_input;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +37,21 @@ public class MainActivity extends AppCompatActivity {
         appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
 
+        Button btn = findViewById(R.id.button2);
 
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                String codeEquipe = IDequipe_input.getText().toString();
+                String Date = date_input.getText().toString();
+                String heureDebut = start_time_input.getText().toString();
+                String heureFin = end_time_input.getText().toString();
+
+                sendDate task = new sendDate();
+                task.execute(codeEquipe, Date, heureDebut,heureFin);
+            }
+        });
 
     }
 
@@ -61,6 +83,8 @@ public class MainActivity extends AppCompatActivity {
         return NavigationUI.navigateUp(navController, appBarConfiguration)
                 || super.onSupportNavigateUp();
     }
+
+
 
 
 }

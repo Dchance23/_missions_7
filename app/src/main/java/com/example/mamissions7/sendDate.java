@@ -1,3 +1,5 @@
+package com.example.mamissions7;
+
 import android.os.AsyncTask;
 import android.util.Log;
 
@@ -19,13 +21,13 @@ public class sendDate extends AsyncTask<String, Void, Void> {
     protected Void doInBackground(String... strings) {
         try {
 
-            URL url = new URL("http://localhost/ApiFourmiLoc/localisation.php");
+            URL url = new URL("http://localhost/ApiFourmiDisp/Disp.php");
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("POST");
             conn.setDoOutput(true);
 
             //Ajouter des paramètres à la requête
-            String requestBody = "codeEquipe=" + strings[0] + "&longitude=" + strings[2] + "&latitude=" + strings[1];
+            String requestBody = "codeEquipe=" + strings[0] + "&Jour=" + strings[2] + "&HeureDebut=" + strings[1] + "&HeureFin=" + strings[3];
             OutputStream outputStream = conn.getOutputStream();
             outputStream.write(requestBody.getBytes());
             outputStream.flush();
